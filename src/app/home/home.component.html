@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="header-content">
+        <h2 class="header-text">Find your next adventure.</h2>
+        <p class="secondary-text">Search for trek guides, hotels, homes and many more...</p>
+    </div>
+    <div class="search-form-container">
+        <form class="search-form" (submit)="onSubmit()">
+            <div class="form-row flow-layout floating-label">
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Location</mat-label>
+                        <input type="text" placeholder="Where do you want to go?" matInput [matAutocomplete]="auto">
+                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                            @if(popularLocation$ | async; as locations; ){
+                                @for(item of locations; track item){
+                                    <mat-option [value]="item">{{item}}</mat-option>
+                                }
+                            }
+                        </mat-autocomplete>
+
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
