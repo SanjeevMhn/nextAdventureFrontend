@@ -190,4 +190,8 @@ section{
     .header-content{
         padding-bottom: 2rem;
     }
+
+    &:last-child{
+        padding-bottom: 3.5rem;
+    }
 }
