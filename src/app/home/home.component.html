@@ -1,27 +1,97 @@
+<app-navbar></app-navbar>
 <div class="wrapper">
-    <div class="header-content">
-        <h2 class="header-text">Find your next adventure.</h2>
-        <p class="secondary-text">Search for trek guides, hotels, homes and many more...</p>
-    </div>
-    <div class="search-form-container">
-        <form class="search-form" (submit)="onSubmit()">
+    <section class="search-form-container">
+        <div class="header-content">
+            <h2 class="header-text">Find your next adventure.</h2>
+            <p class="secondary-text">Search for trek guides, hotels, homes and many more...</p>
+        </div>
+        <form class="search-form" (submit)="onSubmit()" #locationForm="ngForm">
             <div class="form-row flow-layout floating-label">
                 <div class="form-group">
-                    <mat-form-field>
-                        <mat-label>Location</mat-label>
-                        <input type="text" placeholder="Where do you want to go?" matInput [matAutocomplete]="auto">
-                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    <mat-form-field class="icon-wrapper">
+                        <input type="text" class="form-control" placeholder="Where do you want to go?" matInput
+                            [matAutocomplete]="auto" (input)="valueChange($event)" name="location"
+                            [(ngModel)]="location">
+                        <mat-autocomplete #auto="matAutocomplete">
                             @if(popularLocation$ | async; as locations; ){
-                                @for(item of locations; track item){
-                                    <mat-option [value]="item">{{item}}</mat-option>
-                                }
+                            @for(item of locations; track item){
+                            <mat-option [value]="item">{{item}}</mat-option>
+                            }
                             }
                         </mat-autocomplete>
-
+                        <span class="icon-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                                <path
+                                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                            </svg>
+                        </span>
                     </mat-form-field>
                 </div>
             </div>
         </form>
-    </div>
+    </section>
+    <section class="trending-locations-container">
+        <div class="header-content">
+            <h2 class="label-text">Trending Adventures</h2>
+            <p class="desc-text">Most popular choices</p>
+        </div>
+        <ul class="grid-list">
+            @if(trendingLocations$ | async; as trendingLocations ){
+            @for(location of trendingLocations; track location.id){
+            <li class="grid-item">
+                <div class="location-name">{{location.name}}</div>
+            </li>
+            }
+            }
+        </ul>
+    </section>
 
+    <section class="quick-planner">
+        <div class="header-content">
+            <h2 class="label-text">Quick adventure planner</h2>
+            <p class="desc-text">Pick an activity and explore top destinations</p>
+        </div>
+
+        <ul class="activity-list">
+            @if(activities$ | async; as activities){
+            @for(activity of activities; track activity; let idx = $index){
+            <li class="activity-item" [ngClass]="idx == 0 ? 'active': ''">
+                {{activity}}
+            </li>
+            }
+            }
+        </ul>
+
+        <ul class="activity-destination-list">
+            @if(popularLocation$ | async; as popularLocation){
+            @for(location of popularLocation; track location){
+            <li class="act-dest-item">
+                <div class="inner-container">
+                    <div class="img-container"></div>
+                    <div class="detail">
+                        <div class="label-text">{{location}}</div>
+                    </div>
+                </div>
+            </li>
+            }
+            }
+        </ul>
+    </section>
+
+    <section class="destination-blogs">
+        <div class="header-content">
+            <h2 class="label-text">Get inspiration for your next adventure</h2>
+        </div>
+        <ul class="blogs-list">
+            @if(blogs$ | async; as blogs){
+            @for(blog of blogs; track blog.id){
+            <li class="blog-item">
+                <h2 class="label-text">
+                    {{blog.name}}
+                </h2>
+            </li>
+            }
+            }
+        </ul>
+    </section>
 </div>

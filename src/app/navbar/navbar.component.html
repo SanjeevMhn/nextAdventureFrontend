@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<header class="main-header">
+    <div class="wrapper">
+        <nav class="main-nav">
+            <a href="" class="brand-name">
+                <span class="company-name">NextAdventure</span>
+            </a>
+        </nav>
+        <ul class="services-list">
+            @if(services$ | async; as services){
+                @for(service of services; track service; let idx = $index){
+                    <li class="service-item" [ngClass]="idx == 0 ? 'active' : ''">{{service}}</li>
+                }
+            }
+        </ul>
+    </div>
+
+</header>

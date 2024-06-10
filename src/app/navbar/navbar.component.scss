@@ -1,0 +1,30 @@
+.main-header{
+    padding: 1.8rem;
+}
+.brand-name{
+    text-decoration: none;
+    .company-name{
+        font-size: var(--fs-lg);
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+.services-list{
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 8px;
+
+    .service-item {
+        font-size: var(--fs-base);
+        padding: 0.5em 1em;
+        cursor: pointer;
+
+        &.active {
+            border: 1px solid #0051a2;
+            border-radius: 100vh;
+            color: #0051a2;
+        }
+
+    }
+}

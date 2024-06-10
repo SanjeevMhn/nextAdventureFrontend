@@ -1,15 +1,53 @@
-.wrapper{
-    max-width: 99rem;
+.wrapper {
+    max-width: 115.6rem;
     margin: 0 auto;
     width: 90%;
 }
 
-.header-text{
+.header-text {
     font-size: var(--fs-xl);
     font-weight: var(--fw-xl);
 }
 
-.secondary-text{
+.secondary-text {
     font-size: var(--fs-md);
     font-weight: var(--fw-base);
+}
+
+.icon-wrapper {
+    position: relative;
+    --size: 20px;
+
+    .form-control {
+        width: calc(100% - calc(var(--size) + 5px));
+    }
+
+    .icon-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        height: var(--size);
+        width: var(--size);
+        flex: 0 0 var(--size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            height: auto;
+            width: 100%;
+        }
+    }
+}
+
+.header-content {
+    .label-text {
+        font-size: var(--fs-lg);
+        font-weight: 600;
+    }
+
+    .desc-text {
+        font-size: var(--fs-md);
+    }
 }
