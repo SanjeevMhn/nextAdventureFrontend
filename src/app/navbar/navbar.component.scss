@@ -1,30 +1,14 @@
 .main-header{
-    padding: 1.8rem;
+    padding: 2.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
 }
-.brand-name{
-    text-decoration: none;
-    .company-name{
-        font-size: var(--fs-lg);
-        font-weight: 600;
-        color: #000;
-    }
+
+.main-nav{
+    padding-bottom: 2.5rem;
+    border-bottom: 2px solid var(--active-color);
 }
 
 .services-list{
-    padding-top: 1.5rem;
-    display: flex;
-    gap: 8px;
-
-    .service-item {
-        font-size: var(--fs-base);
-        padding: 0.5em 1em;
-        cursor: pointer;
-
-        &.active {
-            border: 1px solid #0051a2;
-            border-radius: 100vh;
-            color: #0051a2;
-        }
-
-    }
+    padding-top: 2.5rem;
 }

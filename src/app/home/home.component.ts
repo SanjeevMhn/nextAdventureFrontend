@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { HomeService, TrendingLocations } from './home.service';
 import { NgClass } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
+import { NgOptimizedImage } from '@angular/common';
 
 
 @Component({
@@ -21,7 +23,10 @@ import { NavbarComponent } from '../navbar/navbar.component';
     AsyncPipe,
     FormsModule,
     NgClass,
-    NavbarComponent],
+    NavbarComponent,
+    FooterComponent,
+    NgOptimizedImage
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -35,6 +40,7 @@ export class HomeComponent implements OnInit {
   blogs$!: Observable<Array<TrendingLocations>>;
 
   location:string =  '';
+  heroImg:string = 'images/hero.jpg';
 
   constructor(private homeService: HomeService){}
 

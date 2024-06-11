@@ -4,11 +4,14 @@
             <a href="" class="brand-name">
                 <span class="company-name">NextAdventure</span>
             </a>
+            <div class="auth-section">
+                
+            </div>
         </nav>
-        <ul class="services-list">
+        <ul class="services-list pill-list">
             @if(services$ | async; as services){
                 @for(service of services; track service; let idx = $index){
-                    <li class="service-item" [ngClass]="idx == 0 ? 'active' : ''">{{service}}</li>
+                    <li class="service-item pill-item" [ngClass]="idx == 0 ? 'active' : ''">{{service}}</li>
                 }
             }
         </ul>

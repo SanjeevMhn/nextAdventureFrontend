@@ -5,8 +5,28 @@
 }
 
 .search-form-container {
-    width: 90%;
-    max-width: 55rem;
+    width: 100%;
+    // max-width: 55rem;
+    height: calc(100vh - 15rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .header-content,
+    .search-form {
+        max-width: 55rem;
+        width: 90%;
+    }
+
+    .header-content {
+        .header-text {
+            color: var(--active-color);
+        }
+
+        .secondary-text {
+            color: #fff;
+        }
+    }
 
     >* {
         width: 100%;
@@ -67,30 +87,13 @@
             padding: 1em;
             border-radius: 10px;
             background-color: aquamarine;
+            border: 2px solid var(--active-color);
 
             .location-name {
                 font-size: var(--fs-md);
-                font-weight: 600;
+                font-weight: 500;
             }
         }
-    }
-}
-
-.activity-list {
-    display: flex;
-    gap: 8px;
-
-    .activity-item {
-        font-size: var(--fs-base);
-        padding: 0.5em 1em;
-        cursor: pointer;
-
-        &.active {
-            border: 1px solid #0051a2;
-            border-radius: 100vh;
-            color: #0051a2;
-        }
-
     }
 }
 
@@ -147,7 +150,7 @@
             padding: 1.5rem;
             border-radius: 15px;
 
-            .label-text{
+            .label-text {
                 font-size: var(--fs-base);
                 font-weight: 600;
             }
@@ -185,13 +188,31 @@
 
     }
 }
-section{
+
+section {
     padding-top: 3.5rem;
-    .header-content{
-        padding-bottom: 2rem;
+    padding-bottom: 3.5rem;
+
+    .header-content {
+        padding-bottom: 2.5rem;
+        padding-top: 2.5rem;
+        padding-left: 2.5rem;
+        border-left: 8px solid var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 3.5rem;
+        background-color: #056e6f14;
+        border-radius: 15px;
     }
 
-    &:last-child{
-        padding-bottom: 3.5rem;
+    &:nth-child(2) {
+        .header-content {
+            padding-left: 0 !important;
+            padding-top: 0 !important;
+            border-left: unset !important;
+            margin: 0 !important;
+            background-color: unset;
+        }
     }
 }

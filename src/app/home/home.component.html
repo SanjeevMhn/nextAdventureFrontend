@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
-<div class="wrapper">
-    <section class="search-form-container">
+<section class="search-form-container has-bg-img">
+    <div class="wrapper">
         <div class="header-content">
             <h2 class="header-text">Find your next adventure.</h2>
             <p class="secondary-text">Search for trek guides, hotels, homes and many more...</p>
@@ -29,8 +29,11 @@
                 </div>
             </div>
         </form>
-    </section>
-    <section class="trending-locations-container">
+    </div>
+    <img src="{{heroImg}}">
+</section>
+<section class="trending-locations-container">
+    <div class="wrapper">
         <div class="header-content">
             <h2 class="label-text">Trending Adventures</h2>
             <p class="desc-text">Most popular choices</p>
@@ -44,18 +47,20 @@
             }
             }
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section class="quick-planner">
+<section class="quick-planner">
+    <div class="wrapper">
         <div class="header-content">
             <h2 class="label-text">Quick adventure planner</h2>
             <p class="desc-text">Pick an activity and explore top destinations</p>
         </div>
 
-        <ul class="activity-list">
+        <ul class="activity-list pill-list invert">
             @if(activities$ | async; as activities){
             @for(activity of activities; track activity; let idx = $index){
-            <li class="activity-item" [ngClass]="idx == 0 ? 'active': ''">
+            <li class="activity-item pill-item" [ngClass]="idx == 0 ? 'active': ''">
                 {{activity}}
             </li>
             }
@@ -76,9 +81,11 @@
             }
             }
         </ul>
-    </section>
+    </div>
+</section>
 
-    <section class="destination-blogs">
+<section class="destination-blogs">
+    <div class="wrapper">
         <div class="header-content">
             <h2 class="label-text">Get inspiration for your next adventure</h2>
         </div>
@@ -93,5 +100,6 @@
             }
             }
         </ul>
-    </section>
-</div>
+    </div>
+</section>
+<app-footer></app-footer>

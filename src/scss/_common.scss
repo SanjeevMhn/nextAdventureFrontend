@@ -45,9 +45,81 @@
     .label-text {
         font-size: var(--fs-lg);
         font-weight: 600;
+        color: var(--primary-color);
     }
 
     .desc-text {
-        font-size: var(--fs-md);
+        font-size: var(--fs-base);
+    }
+}
+
+.brand-name {
+    text-decoration: none;
+
+    .company-name {
+        font-size: var(--fs-lg);
+        font-weight: 400;
+        color: #000;
+        font-family: var(--brand-font);
+        color: var(--active-color);
+    }
+}
+
+
+.has-bg-img {
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: -2;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #4b4b4b;
+        opacity: .45;
+        z-index: -1;
+    }
+}
+
+
+.pill-list {
+    display: flex;
+    gap: 8px;
+
+    .pill-item {
+        font-size: var(--fs-base);
+        padding: 0.5em 1em;
+        cursor: pointer;
+
+        &.active {
+            border: 2px solid var(--active-color);
+            border-radius: 100vh;
+            color: var(--active-color);
+        }
+
+    }
+
+    &.invert{
+        .pill-item{
+            &.active{
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+            }
+        }
     }
 }
