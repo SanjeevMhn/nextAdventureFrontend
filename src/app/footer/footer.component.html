@@ -3,5 +3,15 @@
         <a href="" class="brand-name">
             <span class="company-name">NextAdventure</span>
         </a>
+        <p class="desc-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis reiciendis saepe et assumenda labore error quibusdam dolorum dignissimos sint.
+        </p>
+        <ul class="services-list">
+            @if(services$ | async; as services){
+                @for(service of services; track service){
+                    <li class="service-item">{{service}}</li>
+                }
+            }
+        </ul>
     </div>
 </footer>
