@@ -6,7 +6,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HomeService, TrendingLocations } from './home.service';
+import { HomeService, Locations } from './home.service';
 import { NgClass } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -17,9 +17,9 @@ import { NgOptimizedImage } from '@angular/common';
   selector: 'app-home',
   standalone: true,
   imports: [
-    MatFormFieldModule, 
-    MatAutocompleteModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatInputModule,
     AsyncPipe,
     FormsModule,
     NgClass,
@@ -32,17 +32,17 @@ import { NgOptimizedImage } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  @ViewChild('adventureForm',{static: true}) adventureForm!: NgForm;
+  @ViewChild('adventureForm', { static: true }) adventureForm!: NgForm;
 
-  popularLocation$!:Observable<string[]>;
-  trendingLocations$!: Observable<Array<TrendingLocations>>;
+  popularLocation$!: Observable<Array<Locations>>;
+  trendingLocations$!: Observable<Array<Locations>>;
   activities$!: Observable<Array<string>>;
-  blogs$!: Observable<Array<TrendingLocations>>;
+  blogs$!: Observable<Array<Locations>>;
 
-  location:string =  '';
-  heroImg:string = 'images/hero.jpg';
+  location: string = '';
+  heroImg: string = 'images/hero.jpg';
 
-  constructor(private homeService: HomeService){}
+  constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     this.popularLocation$ = this.homeService.getLocations().pipe(map(locations => locations));
@@ -51,14 +51,14 @@ export class HomeComponent implements OnInit {
     this.blogs$ = this.homeService.getBlogs().pipe(map(blogs => blogs));
   }
 
-  valueChange(event:any):void{
+  valueChange(event: any): void {
     let search = event.target.value.toLowerCase();
     this.popularLocation$ = this.homeService.getLocations().pipe(
-      map(items => items.filter(item => item.toLowerCase().includes(search.toLowerCase())))
-    ); 
+      map(items => items.filter(item => item.name.toLowerCase().includes(search.toLowerCase())))
+    );
   }
 
-  onSubmit():void{
+  onSubmit(): void {
 
   }
 }

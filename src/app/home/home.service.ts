@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 
-export type TrendingLocations = {
+export type Locations = {
   id: number,
   name: string,
+  img?: string,
 }
 
 @Injectable({
@@ -26,38 +27,64 @@ export class HomeService {
     return of(services)
   }
 
-  getLocations(): Observable<string[]> {
-    let popularLocation: string[] = [
-      'Pokhara',
-      'Annapurna',
-      'Ghandruk',
-      'Lumbini',
-    ];
-
-    return of(popularLocation);
-  }
-
-  getTrendingLocations():Observable<Array<TrendingLocations>>{
-    let trendingLocations:Array<TrendingLocations> = [
+  getLocations(): Observable<Array<Locations>> {
+    let trendingLocations:Array<Locations> = [
       {
         id: 1,
-        name: 'Pokhara'
+        name: 'Pokhara',
+        img: 'images/pokhara.jpg'
       },
       {
         id: 2,
-        name: 'Annapurna'
+        name: 'Annapurna',
+        img: 'images/annapurna.jpg'
       },
       {
         id: 3,
-        name: 'Ghandruk'
+        name: 'Ghandruk',
+        img: 'images/ghandruk.jpg'
       },
       {
         id: 4,
-        name: 'Lumbini'
+        name: 'Lumbini',
+        img: 'images/lumbini.jpg'
       },
       {
         id: 5,
-        name: 'Mardi'
+        name: 'Mardi',
+        img: 'images/mardi.jpg'
+      }
+    ];
+
+    return of(trendingLocations)
+  }
+
+  getTrendingLocations():Observable<Array<Locations>>{
+    let trendingLocations:Array<Locations> = [
+      {
+        id: 1,
+        name: 'Pokhara',
+        img: 'images/pokhara.jpg'
+      },
+      {
+        id: 2,
+        name: 'Annapurna',
+        img: 'images/annapurna.jpg'
+      },
+      {
+        id: 3,
+        name: 'Ghandruk',
+        img: 'images/ghandruk.jpg'
+      },
+      {
+        id: 4,
+        name: 'Lumbini',
+        img: 'images/lumbini.jpg'
+      },
+      {
+        id: 5,
+        name: 'Mardi',
+        img: 'images/mardi.jpg'
       }
     ];
 
@@ -78,27 +105,32 @@ export class HomeService {
     return of(activities);
   }
 
-  getBlogs(): Observable<Array<TrendingLocations>>{
+  getBlogs(): Observable<Array<Locations>>{
     let blogs = [
       {
         id: 1,
-        name: 'Top hiking locations'
+        name: 'Top hiking locations',
+        img: 'images/pokhara.jpg'
       },
       {
         id: 2,
-        name: 'Bungee destinations'
+        name: 'Bungee destinations',
+        img: 'images/mardi.jpg'
       },
       {
         id: 3,
-        name: 'Top events in Kathmandu'
+        name: 'Top events in Kathmandu',
+        img: 'images/ghandruk.jpg'
       },
       {
         id: 4,
-        name: 'Cable car in Pokhara'
+        name: 'Cable car in Pokhara',
+        img: 'images/lumbini.jpg'
       },
       {
         id: 5,
-        name: 'Chandragiri temple visit'
+        name: 'Chandragiri temple visit',
+        img: 'images/annapurna.jpg'
       }
     ];
 

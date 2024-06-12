@@ -14,8 +14,8 @@
                             [(ngModel)]="location">
                         <mat-autocomplete #auto="matAutocomplete">
                             @if(popularLocation$ | async; as locations; ){
-                            @for(item of locations; track item){
-                            <mat-option [value]="item">{{item}}</mat-option>
+                            @for(item of locations; track item.id){
+                            <mat-option [value]="item.name">{{item.name}}</mat-option>
                             }
                             }
                         </mat-autocomplete>
@@ -43,6 +43,7 @@
             @for(location of trendingLocations; track location.id){
             <li class="grid-item">
                 <div class="location-name">{{location.name}}</div>
+                <img src="{{location.img}}" alt="">
             </li>
             }
             }
@@ -69,12 +70,14 @@
 
         <ul class="activity-destination-list">
             @if(popularLocation$ | async; as popularLocation){
-            @for(location of popularLocation; track location){
+            @for(location of popularLocation; track location.id){
             <li class="act-dest-item">
                 <div class="inner-container">
-                    <div class="img-container"></div>
+                    <div class="img-container">
+                        <img src="{{location.img}}" alt="">
+                    </div>
                     <div class="detail">
-                        <div class="label-text">{{location}}</div>
+                        <div class="label-text">{{location.name}}</div>
                     </div>
                 </div>
             </li>
@@ -96,6 +99,7 @@
                 <h2 class="label-text">
                     {{blog.name}}
                 </h2>
+                <img src="{{blog.img}}" alt="">
             </li>
             }
             }
