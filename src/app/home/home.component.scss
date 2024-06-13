@@ -25,6 +25,12 @@
 
         .secondary-text {
             color: #fff;
+            font-weight: 500;
+        }
+
+        .header-text,
+        .secondary-text{
+            filter: drop-shadow(4px 4px 4px #000000);
         }
     }
 

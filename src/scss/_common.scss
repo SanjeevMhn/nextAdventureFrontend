@@ -81,18 +81,20 @@
         z-index: -2;
     }
 
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 100%;
-        width: 100%;
-        background-color: #4b4b4b;
-        opacity: .45;
-        z-index: -1;
+    &.overlay {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #4b4b4b;
+            opacity: .45;
+            z-index: -1;
+        }
     }
 }
 
@@ -114,9 +116,9 @@
 
     }
 
-    &.invert{
-        .pill-item{
-            &.active{
+    &.invert {
+        .pill-item {
+            &.active {
                 border-color: var(--primary-color);
                 color: var(--primary-color);
             }
