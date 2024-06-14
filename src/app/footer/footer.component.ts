@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeService } from '../home/home.service';
+import { HomeService, Locations } from '../home/home.service';
 import { Observable, map } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 
@@ -13,6 +13,7 @@ import { AsyncPipe } from '@angular/common';
 export class FooterComponent{
 
   services$:Observable<string[]> = this.homeService.getServices().pipe(map(items => items));
+  locations$:Observable<Array<Locations>> = this.homeService.getLocations().pipe(map(items => items));
 
   constructor(private homeService: HomeService){}
 

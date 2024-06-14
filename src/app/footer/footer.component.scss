@@ -1,4 +1,67 @@
 .main-footer{
     padding: 3.5rem 0;
     background-color: var(--primary-color);
+    >*{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
+    .brand-name,
+    .desc-text{
+        grid-column: 1;
+    }
+    .desc-text{
+        grid-row: 2;
+        font-size: var(--fs-base);
+        color: #fff;
+    }
+
+    .services-list{
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        font-size: var(--fs-base);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .service-item{
+            color: var(--active-color);
+        }
+    }
+
+    .social-media-list{
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        grid-column: 1;
+        grid-row: 3;
+        .link{
+            --size: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--active-color);
+            flex: 0 0 var(--size);
+            height: var(--size);
+            width: var(--size);
+            border-radius: 50%;
+            overflow: hidden;
+            svg{
+                fill: var(--active-color);
+                height: auto;
+                width: 70%;
+            }
+        }
+    }
+
+    .trending-places-list{
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        .label-text{
+            font-size: var(--fs-md);
+            margin-bottom: 1rem;
+            color: var(--active-color);
+            text-decoration: underline;
+        }
+    }
 }

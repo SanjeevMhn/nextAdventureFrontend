@@ -30,7 +30,7 @@
 
         .header-text,
         .secondary-text{
-            filter: drop-shadow(4px 4px 4px #000000);
+            filter: drop-shadow(4px 4px 4px #716734);
         }
     }
 
@@ -103,6 +103,7 @@
                 font-size: var(--fs-md);
                 font-weight: 500;
                 color: var(--active-color);
+                filter: drop-shadow(4px 4px 4px #716734);
             }
 
             img{
@@ -189,6 +190,7 @@
                 font-size: var(--fs-md);
                 font-weight: 500;
                 color: var(--active-color);
+                filter: drop-shadow(4px 4px 4px #716734);
             }
             
             img{
