@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [AsyncPipe,NgClass],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.scss'
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
 

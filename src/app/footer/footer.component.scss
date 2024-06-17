@@ -1,41 +1,47 @@
-.main-footer{
+.label-text {
+    font-size: var(--fs-md);
+    margin-bottom: 1rem;
+    color: var(--active-color);
+    text-decoration: underline;
+}
+
+.services-list {
+    font-size: var(--fs-base);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .service-item {
+        color: var(--active-color);
+    }
+}
+
+
+.main-footer {
     padding: 3.5rem 0;
     background-color: var(--primary-color);
-    >*{
+
+    >* {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .brand-name,
-    .desc-text{
-        grid-column: 1;
-    }
-    .desc-text{
-        grid-row: 2;
+
+
+    .desc-text {
         font-size: var(--fs-base);
         color: #fff;
     }
 
-    .services-list{
-        grid-column: 2;
-        grid-row: 1 / span 2;
-        font-size: var(--fs-base);
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        .service-item{
-            color: var(--active-color);
-        }
-    }
 
-    .social-media-list{
+    .social-media-list {
         display: flex;
         gap: 4px;
         align-items: center;
-        grid-column: 1;
-        grid-row: 3;
-        .link{
+
+
+        .link {
             --size: 35px;
             display: flex;
             align-items: center;
@@ -46,7 +52,8 @@
             width: var(--size);
             border-radius: 50%;
             overflow: hidden;
-            svg{
+
+            svg {
                 fill: var(--active-color);
                 height: auto;
                 width: 70%;
@@ -54,14 +61,74 @@
         }
     }
 
-    .trending-places-list{
-        grid-column: 3;
-        grid-row: 1 / span 2;
-        .label-text{
-            font-size: var(--fs-md);
-            margin-bottom: 1rem;
-            color: var(--active-color);
-            text-decoration: underline;
+    .get-newsletter-container {
+
+        .newsletter-form {
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                >*{
+                    height: 100%;
+                    input{
+                        width: 100%;
+                    }
+                    button{
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .newsletter-desc-text {
+        font-size: var(--fs-sm);
+        color: #fff;
+    }
+
+}
+
+@media screen and (min-width: 990px) {
+    .main-footer {
+        >* {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .brand-name,
+        .desc-text {
+            grid-column: 1;
+        }
+
+        .desc-text {
+            grid-row: 2;
+        }
+
+        .services-list-container {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
+
+        .social-media-list {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .trending-places-list {
+            grid-column: 3;
+            grid-row: 1 / span 2;
+        }
+
+        .services-list-container,
+        .trending-places-list {
+            justify-self: center;
+        }
+
+        .get-newsletter-container {
+            grid-column: 4;
+        }
+
+        .newsletter-desc-text {
+            grid-column: 4;
+            grid-row: 2;
         }
     }
 }
