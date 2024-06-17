@@ -1,14 +1,42 @@
-.main-header{
-    padding: 2.5rem;
+.main-header {
+    padding: 2.5rem 0;
     background-color: var(--primary-color);
     color: #fff;
 }
 
-.main-nav{
-    padding-bottom: 2.5rem;
-    border-bottom: 2px solid var(--active-color);
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.services-list{
+.services-list {
     padding-top: 2.5rem;
+    display: none;
+}
+
+.auth-link {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
+    flex: 0 0 var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        height: 70%;
+        width: 70%;
+        fill: var(--active-color);
+    }
+}
+
+@media  screen and (min-width: 990px) {
+    .main-nav{
+        border-bottom: 2px solid var(--active-color);
+        padding-bottom: 2.5rem;
+    }
+    .services-list{
+        display: flex;
+    }
 }

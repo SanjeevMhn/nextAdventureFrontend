@@ -1,10 +1,10 @@
 :root {
     font-size: 62.5%;
-    --fs-xl: 4.8rem;
-    --fs-lg: 3.2rem;
-    --fs-md: 2.4rem;
-    --fs-base: 1.8rem;
-    --fs-sm: 1.4rem;
+    --fs-xl: 3.8rem;
+    --fs-lg: 2.4rem;
+    --fs-md: 1.8;
+    --fs-base: 1.4rem;
+    --fs-sm: 1rem;
     --fs-xs: 0.8rem;
 
     --fw-xl: 800;
@@ -15,4 +15,16 @@
     --primary-color: #056e6f;
     --active-color: #F0DF84;
     --brand-font: "Lobster", sans-serif;
+}
+
+
+@media screen and (min-width: 990px) {
+    :root {
+        --fs-xl: 4.8rem;
+        --fs-lg: 3.2rem;
+        --fs-md: 2.4rem;
+        --fs-base: 1.8rem;
+        --fs-sm: 1.4rem;
+        --fs-xs: 0.8rem;
+    }
 }

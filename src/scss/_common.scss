@@ -102,6 +102,8 @@
 .pill-list {
     display: flex;
     gap: 8px;
+    width: 100%;
+    overflow-x: auto;
 
     .pill-item {
         font-size: var(--fs-base);
