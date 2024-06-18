@@ -65,13 +65,8 @@
 
         .newsletter-form {
             .form-row {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                >*{
-                    height: 100%;
-                    input{
-                        width: 100%;
-                    }
+                display: flex;
+                .form-group{
                     button{
                         height: 100%;
                     }
