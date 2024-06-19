@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   blogs$!: Observable<Array<Locations>>;
 
   location: string = '';
-  heroImg: string = './images/hero.jpg';
+  heroImg: string = '/images/hero.jpg';
 
   constructor(private homeService: HomeService) { }
 
