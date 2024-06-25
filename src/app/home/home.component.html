@@ -32,6 +32,8 @@
     </div>
     <img src="{{heroImg}}">
 </section>
+@if(vm$ | async; as vm){
+
 <section class="trending-locations-container">
     <div class="wrapper">
         <div class="header-content">
@@ -39,13 +41,11 @@
             <p class="desc-text">Most popular choices</p>
         </div>
         <ul class="grid-list">
-            @if(trendingLocations$ | async; as trendingLocations ){
-            @for(location of trendingLocations; track location.id){
+            @for(location of vm.trending; track location.id){
             <li class="grid-item">
                 <div class="location-name">{{location.name}}</div>
                 <img src="{{location.img}}" alt="">
             </li>
-            }
             }
         </ul>
     </div>
@@ -59,18 +59,15 @@
         </div>
 
         <ul class="activity-list pill-list invert">
-            @if(activities$ | async; as activities){
-            @for(activity of activities; track activity; let idx = $index){
+            @for(activity of vm.activities; track activity; let idx = $index){
             <li class="activity-item pill-item" [ngClass]="idx == 0 ? 'active': ''">
                 {{activity}}
             </li>
             }
-            }
         </ul>
 
         <ul class="activity-destination-list">
-            @if(popularLocation$ | async; as popularLocation){
-            @for(location of popularLocation; track location.id){
+            @for(location of vm.popular; track location.id){
             <li class="act-dest-item">
                 <div class="inner-container">
                     <div class="img-container">
@@ -82,7 +79,6 @@
                 </div>
             </li>
             }
-            }
         </ul>
     </div>
 </section>
@@ -93,8 +89,7 @@
             <h2 class="label-text">Get inspiration for your next adventure</h2>
         </div>
         <ul class="blogs-list">
-            @if(blogs$ | async; as blogs){
-            @for(blog of blogs; track blog.id){
+            @for(blog of vm.blogs; track blog.id){
             <li class="blog-item">
                 <h2 class="label-text">
                     {{blog.name}}
@@ -102,8 +97,13 @@
                 <img src="{{blog.img}}" alt="">
             </li>
             }
-            }
         </ul>
     </div>
 </section>
+
+
+}
+
+<app-bottom-nav></app-bottom-nav>
+
 <app-footer></app-footer>

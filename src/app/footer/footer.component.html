@@ -33,26 +33,24 @@
                 </svg>
             </a>
         </div>
+        @if(vm$ | async; as vm){
         <div class="services-list-container">
             <h2 class="label-text">Our Services</h2>
             <ul class="services-list">
-                @if(services$ | async; as services){
-                @for(service of services; track service){
+                @for(service of vm.services; track service){
                 <li class="service-item">{{service}}</li>
-                }
                 }
             </ul>
         </div>
         <div class="trending-places-list">
             <h2 class="label-text">Trending Places</h2>
             <ul class="places-list services-list">
-                @if(locations$ | async; as locations){
-                @for(location of locations; track location.id){
+                @for(location of vm.locations; track location.id){
                 <li class="place-item service-item">{{location.name}}</li>
-                }
                 }
             </ul>
         </div>
+        }
         <div class="get-newsletter-container">
             <form class="newsletter-form">
                 <div class="form-row">
