@@ -3,7 +3,7 @@
 	width: 100%;
 	position: fixed;
 	bottom: 0;
-	box-shadow: 0 -10px 12px 8px #fffbe6;
+	box-shadow: 0 -20px 18px 0 #fffbe6;
 
 	.nav-list {
 		--max-width: calc(32rem - 5rem);
@@ -91,12 +91,12 @@
 			}
 
 			&:before {
-				left: calc(calc(-1 * var(--size) - 0.44rem));
+				left: calc(calc(-1 * var(--size) - 0.4rem));
 				border-top-right-radius: 50%;
 			}
 
 			&:after {
-				right: calc(calc(-1 * var(--size) - 0.44rem));
+				right: calc(calc(-1 * var(--size) - 0.4rem));
 				border-top-left-radius: 50%;
 			}
 		}
