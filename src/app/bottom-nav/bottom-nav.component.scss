@@ -2,8 +2,8 @@
 	background: var(--primary-color);
 	width: 100%;
 	position: fixed;
-	bottom: 0;
-	box-shadow: 0 -20px 18px 0 #fffbe6;
+	bottom: -2px;
+	box-shadow: 0 -8px 0 0 #fffbe6;
 
 	.nav-list {
 		--max-width: calc(32rem - 5rem);
@@ -26,7 +26,12 @@
 				gap: 0.5rem;
 				text-decoration: none;
 				color: #000;
-
+				background-color: unset;
+				padding: unset;
+				margin: unset;
+				outline: unset;
+				border: unset;
+				cursor: pointer;
 				.icon-container {
 					--size: 2.8rem;
 					height: var(--size);
@@ -85,7 +90,7 @@
 				position: absolute;
 				height: var(--size);
 				width: var(--size);
-				background: transparent;
+				background: var(--primary-color);
 				top: calc(50% - 0.3rem);
 				box-shadow: 0 -8px 0 0 #fffbe6;
 			}
@@ -93,6 +98,7 @@
 			&:before {
 				left: calc(calc(-1 * var(--size) - 0.4rem));
 				border-top-right-radius: 50%;
+				border-width: 0;
 			}
 
 			&:after {

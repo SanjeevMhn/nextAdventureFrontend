@@ -2,7 +2,7 @@
 	<ul class="nav-list">
 		@for(item of bottomMenus; track item.name; let idx = $index){
 			<li  [class]="activeMenu == item.name ? 'active' : ''">
-				<a routerLink="home" class="nav-item" (click)="changeActiveMenu(item.name)">
+				<button class="nav-item" (click)="changeActiveMenu(item.name)">
 					<span class="icon-container">
 						@switch(item.name){
 							
@@ -24,7 +24,7 @@
 						}
 					</span>			
 					<span class="label-text">{{item.name}}</span>
-				</a>
+				</button>
 			</li>
 		}
 		<div class="indicator"></div>
