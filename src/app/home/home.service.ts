@@ -8,14 +8,60 @@ export type Locations = {
   img?: string,
 }
 
+export type Destination = {
+  id: number,
+  name: string,
+  img: string,
+  desc: string,
+  location?: string,
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 
+
+  destinations: Array<Destination> = [
+    {
+      id: 1,
+      name: 'Pokhara',
+      img: '/images/pokhara.jpg',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      id: 2,
+      name: 'Annapurna',
+      img: '/images/annapurna.jpg',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      id: 3,
+      name: 'Ghandruk',
+      img: '/images/ghandruk.jpg',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      id: 4,
+      name: 'Lumbini',
+      img: '/images/lumbini.jpg',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      id: 5,
+      name: 'Mardi',
+      img: '/images/mardi.jpg',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }
+  ]
   constructor() { }
 
-  getServices(): Observable<string[]>{
+
+  getDestinations(): Observable<Destination[]>{
+    return of(this.destinations);
+  }
+
+  getServices(): Observable<string[]> {
     let services: Array<string> = [
       'Adventure',
       'Hire Guide',
@@ -28,7 +74,7 @@ export class HomeService {
   }
 
   getLocations(): Observable<Array<Locations>> {
-    let trendingLocations:Array<Locations> = [
+    let trendingLocations: Array<Locations> = [
       {
         id: 1,
         name: 'Pokhara',
@@ -59,8 +105,8 @@ export class HomeService {
     return of(trendingLocations)
   }
 
-  getTrendingLocations():Observable<Array<Locations>>{
-    let trendingLocations:Array<Locations> = [
+  getTrendingLocations(): Observable<Array<Locations>> {
+    let trendingLocations: Array<Locations> = [
       {
         id: 1,
         name: 'Pokhara',
@@ -91,7 +137,7 @@ export class HomeService {
     return of(trendingLocations);
   }
 
-  getActivityList(): Observable<Array<string>>{
+  getActivityList(): Observable<Array<string>> {
     let activities: Array<string> = [
       'trekking',
       'hiking',
@@ -105,7 +151,7 @@ export class HomeService {
     return of(activities);
   }
 
-  getBlogs(): Observable<Array<Locations>>{
+  getBlogs(): Observable<Array<Locations>> {
     let blogs = [
       {
         id: 1,
