@@ -10,17 +10,18 @@ import { RouterLink } from '@angular/router';
 })
 export class BottomNavComponent {
   bottomMenus: Array<{ name: string, link: string }> = [
+    
     {
-      name: 'home',
-      link: ''
+      name: 'news',
+      link: 'news'
     },
     {
       name: 'search',
       link: 'search'
     },
     {
-      name: 'news',
-      link: 'news'
+      name: 'home',
+      link: ''
     },
     {
       name: 'events',
